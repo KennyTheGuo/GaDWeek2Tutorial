@@ -19,6 +19,9 @@ public class AdvancedPlayerController : MonoBehaviour
     Vector3 velocity;
     public float gravity = -9.81f;
 
+    // Variables for jumping
+    public float jumpHeight = 3f;
+
     private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
@@ -26,6 +29,13 @@ public class AdvancedPlayerController : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+    {
+        PlayerMover();
+        ApplyGravity();
+        ProcessJumping();
+    }
+
+    void PlayerMover()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
@@ -35,12 +45,12 @@ public class AdvancedPlayerController : MonoBehaviour
         {
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
 
-            if(smoothMover)
+            if (smoothMover)
             {
                 float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
                 transform.rotation = Quaternion.Euler(0f, angle, 0f);
             }
-            else if(!smoothMover)
+            else if (!smoothMover)
             {
                 transform.rotation = Quaternion.Euler(0f, targetAngle, 0f);
             }
@@ -48,7 +58,10 @@ public class AdvancedPlayerController : MonoBehaviour
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDir.normalized * speed * Time.deltaTime);
         }
+    }
 
+    void ApplyGravity()
+    {
         // Code for gravity
         if (controller.isGrounded && velocity.y < 0)
         {
@@ -57,5 +70,13 @@ public class AdvancedPlayerController : MonoBehaviour
 
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    void ProcessJumping()
+    {
+        if (Input.GetButtonDown("Jump") && controller.isGrounded)
+        {
+            velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
     }
 }
