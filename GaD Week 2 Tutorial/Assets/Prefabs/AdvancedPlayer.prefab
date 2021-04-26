@@ -297,7 +297,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2205460520069417622}
   - component: {fileID: 2205460520069417623}
-  - component: {fileID: 5742774624165319449}
+  - component: {fileID: 5848260224589035411}
+  - component: {fileID: 5848260224589035412}
+  - component: {fileID: 6786386040236205550}
   m_Layer: 0
   m_Name: AdvancedPlayer
   m_TagString: Player
@@ -339,7 +341,7 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.22, z: 0}
---- !u!114 &5742774624165319449
+--- !u!114 &5848260224589035411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -348,16 +350,44 @@ MonoBehaviour:
   m_GameObject: {fileID: 2205460520069417621}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1189a4f859fafcc4e83052fc055f7b26, type: 3}
+  m_Script: {fileID: 11500000, guid: 714d2e3298bc6e549b1ae3d9e9b627e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  warpPoint: {fileID: 0}
+  teleportFloorLevel: -5
+--- !u!114 &5848260224589035412
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205460520069417621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c3d99635333ae440889ef7f33ec5604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushPower: 10
+--- !u!114 &6786386040236205550
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205460520069417621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 235d2eeac2c74cb47bd6c5c2c48cb842, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 2205460520069417623}
-  cam: {fileID: 0}
+  cam: {fileID: 2205460520069417622}
   speed: 6
   turnSmoothTime: 0.1
-  smoothMover: 1
+  smoothMover: 0
   gravity: -9.81
   jumpHeight: 3
+  allowJumping: 1
 --- !u!1 &2205460520276391596
 GameObject:
   m_ObjectHideFlags: 0
