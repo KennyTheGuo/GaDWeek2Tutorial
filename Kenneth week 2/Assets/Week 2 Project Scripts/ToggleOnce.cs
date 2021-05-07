@@ -2,17 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ToggleOnOrOff : MonoBehaviour
+public class ToggleOnce : MonoBehaviour
 {
     public GameObject objectToToggle;
 
     private void OnTriggerEnter(Collider other)
     {
-
-        if(other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player")
         {
-
-            if(objectToToggle.active == false)
+            if (objectToToggle.active == false)
             {
                 objectToToggle.SetActive(true);
             }
@@ -22,7 +20,10 @@ public class ToggleOnOrOff : MonoBehaviour
                 objectToToggle.SetActive(false);
             }
 
+            Destroy(this);
         }
+
     }
+
 
 }
