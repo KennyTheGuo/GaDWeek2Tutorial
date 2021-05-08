@@ -28,7 +28,7 @@ public class MovePlatform : MonoBehaviour
         currentTime -= Time.deltaTime;
         if(currentTime <= 0)
         {
-            sideToSideSpeed *= backSpeed; // Change direction!
+            sideToSideSpeed *= -1; // Change direction!
             frontToBackSpeed *= -1;
             upAndDownSpeed *= -1;
             currentTime = moveTime;
