@@ -6,6 +6,7 @@ public class MyDoorController : MonoBehaviour
 {
 
     private Animator doorAnim;
+    public GameObject specificDoor;
 
     private bool doorOpen = false;
 

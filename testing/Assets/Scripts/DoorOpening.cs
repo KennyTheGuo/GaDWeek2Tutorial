@@ -17,8 +17,10 @@ public class DoorOpening : MonoBehaviour
     [SerializeField] private Image Crosshair = null;
     private bool isCrosshairActive;
     private bool doOnce;
+    private bool needsKey;
+    private bool hasKey;
 
-    private const string interactabletag = "interactiveObject";
+    private const string interactabletag = "Interactable";
 
     private void update()
     {
@@ -32,16 +34,21 @@ public class DoorOpening : MonoBehaviour
             //if (hit.GetComponent<Collider>().CompareTag(interactabletag))
             if(hit.collider.CompareTag(interactabletag))
             {
-                //raycastedObj = hit.GetComponent<Collider>().gameObject.GetComponent<MyDoorController>();
-                raycastedObj = hit.collider.gameObject.GetComponent<MyDoorController>();
-                CrosshairChange(true);
-            }
+                if (!doOnce)
+                {
+                    //raycastedObj = hit.GetComponent<Collider>().gameObject.GetComponent<MyDoorController>();
+                    raycastedObj = hit.collider.gameObject.GetComponent<MyDoorController>();
+                    CrosshairChange(true);
+                }
+            
 
-            isCrosshairActive = true;
-            doOnce = true;
-            if (Input.GetKeyDown(openDoorKey))
-            {
-                raycastedObj.PlayAnimation();
+                isCrosshairActive = true;
+                doOnce = true;
+
+                if (Input.GetKeyDown(openDoorKey))
+                {
+                    raycastedObj.PlayAnimation();
+                }
             }
         }
 
