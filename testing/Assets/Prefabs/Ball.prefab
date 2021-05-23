@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5152134186542800490
+--- !u!1 &2724567893485943288
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,48 +8,48 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5152134186542800495}
-  - component: {fileID: 5152134186542800494}
-  - component: {fileID: 5152134186542800493}
-  - component: {fileID: 5152134186542800492}
-  - component: {fileID: 9072313637207317910}
-  - component: {fileID: 1886843474493277806}
+  - component: {fileID: 2724567893485943172}
+  - component: {fileID: 2724567893485943173}
+  - component: {fileID: 2724567893485943290}
+  - component: {fileID: 2724567893485943291}
+  - component: {fileID: 2724567893485943175}
+  - component: {fileID: 2724567893485943174}
   m_Layer: 0
-  m_Name: PressurePlate
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5152134186542800495
+--- !u!4 &2724567893485943172
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5152134186542800490}
+  m_GameObject: {fileID: 2724567893485943288}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 157.36, y: 34.23, z: 141.37648}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 155.86, y: 32.425, z: 135.83}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 0.4}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5152134186542800494
+--- !u!33 &2724567893485943173
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5152134186542800490}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &5152134186542800493
+  m_GameObject: {fileID: 2724567893485943288}
+  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2724567893485943290
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5152134186542800490}
+  m_GameObject: {fileID: 2724567893485943288}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -84,26 +84,26 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &5152134186542800492
-BoxCollider:
+--- !u!135 &2724567893485943291
+SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5152134186542800490}
+  m_GameObject: {fileID: 2724567893485943288}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
+  m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &9072313637207317910
+--- !u!54 &2724567893485943175
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5152134186542800490}
+  m_GameObject: {fileID: 2724567893485943288}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -113,16 +113,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!135 &1886843474493277806
-SphereCollider:
+--- !u!114 &2724567893485943174
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5152134186542800490}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_GameObject: {fileID: 2724567893485943288}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.3
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 888a7c05421d25541b649732e320cf03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pushPower: 10.62

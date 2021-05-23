@@ -2,30 +2,33 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MyDoorController : MonoBehaviour
+public class OpenDoor : MonoBehaviour
 {
 
     private Animator doorAnim;
-
+    public GameObject specificDoor;
     private bool doorOpen = false;
+
 
     private void awake()
     {
+
         doorAnim = gameObject.GetComponent<Animator>();
+
     }
 
-    public void PlayAnimation()
+
+    private void OnTriggerEnter(Collider other)
     {
-        if(!doorOpen)
+
+        if (other.gameObject.tag == "Player")
         {
-            doorAnim.Play("DoorOpen", 0, 0.0f);
+
+            specificDoor.PlayAnimation();
             doorOpen = true;
+
         }
-        else
-        {
-            doorAnim.Play("DoorClose", 0, 0.0f);
-            doorOpen = false;
-        }
+
     }
 
 }
