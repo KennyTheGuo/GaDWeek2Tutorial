@@ -1,4 +1,4 @@
- using System.Collections;
+using System.Collections;   
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,7 +9,7 @@ public class ToggleOnce : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Thing")
+        if (other.gameObject.tag == "Thing" || other.gameObject.tag == "Player" )
         {
             if (objectToToggle.active == false)
             {
@@ -26,7 +26,7 @@ public class ToggleOnce : MonoBehaviour
 
     }
 
-    private void awake()
+    private void Awake()
     { 
         if (StartOff)
         {

@@ -4,31 +4,17 @@ using UnityEngine;
 
 public class OpenDoor : MonoBehaviour
 {
-
-    private Animator doorAnim;
-    public GameObject specificDoor;
-    private bool doorOpen = false;
-
+    public MyDoorController specificDoor;
 
     private void awake()
     {
 
-        doorAnim = gameObject.GetComponent<Animator>();
-
     }
 
 
-    private void OnTriggerEnter(Collider other)
+    public void Open()
     {
-
-        if (other.gameObject.tag == "Player")
-        {
-
             specificDoor.PlayAnimation();
-            doorOpen = true;
-
-        }
-
     }
 
 }
